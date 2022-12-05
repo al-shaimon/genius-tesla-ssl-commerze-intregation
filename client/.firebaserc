@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "genius-car-f0a9b"
-  }
+    "default": "genius-car-dcc1a",
+    "car": "genius-car-dcc1a"
+  },
+  "targets": {},
+  "etags": {}
 }
