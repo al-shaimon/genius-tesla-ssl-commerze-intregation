@@ -45,11 +45,7 @@ const Checkout = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        if (data.acknowledged) {
-          alert('Order placed successfully');
-          form.reset();
-        }
+        window.location.replace(data.url);
       })
       .catch((er) => console.error(er));
   };
@@ -92,11 +88,7 @@ const Checkout = () => {
               className="input input-ghost w-full input-bordered"
               readOnly
             />
-            <select
-              defaultValue="BDT"
-              name="currency"
-              className="select select-bordered max-w-xs"
-            >
+            <select defaultValue="BDT" name="currency" className="select select-bordered max-w-xs">
               <option disabled selected>
                 Select Currency
               </option>
