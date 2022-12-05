@@ -170,6 +170,13 @@ async function run() {
       }
     });
 
+    app.get('/orders/by-transaction-id/:id', async (req, res) => {
+      const { id } = req.params;
+      const order = await orderCollection.findOne({ transactionId: id });
+
+      res.send(order);
+    });
+
     app.patch('/orders/:id', verifyJWT, async (req, res) => {
       const id = req.params.id;
       const status = req.body.status;
